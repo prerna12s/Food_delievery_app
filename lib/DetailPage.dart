@@ -17,13 +17,13 @@ class _DetailState extends State<Detail> {
   bool iconChange=false;
   void changeIconColor() {
     setState(() {
-      iconcolor = iconchange?Colors.red:Colors.black54; // Change color to red
+      iconcolor = iconchange?Colors.red.shade800:Colors.black54; // Change color to red
     });
   }
 
   void changeiconColor() {
     setState(() {
-      iconColor = iconChange?Colors.redAccent:Colors.black54; // Change color to red
+      iconColor = iconChange?Colors.red.shade800:Colors.black54; // Change color to red
     });
   }
 
