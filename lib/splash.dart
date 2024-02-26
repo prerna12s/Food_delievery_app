@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import'package:food_delieveryapp_prerna/home.dart';
-import 'package:food_delieveryapp_prerna/splash.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -31,16 +29,16 @@ class _SplashState extends State<Splash> {
 
                     child: Lottie.asset("lib/images/delievery.json", )),
               ),
-              SizedBox(
+              const SizedBox(
                 height:30,
               ),
-              Text("Order Your Food Now !",style:TextStyle(
+              const Text("Order Your Food Now !",style:TextStyle(
                 fontSize: 29,
                 fontWeight: FontWeight.bold,
                 fontStyle:FontStyle.italic,
 
               )),
-              SizedBox(
+              const SizedBox(
                 height:20,
               ),
               Padding(
@@ -65,12 +63,12 @@ class _SplashState extends State<Splash> {
                   child: Container(
                     height: 60,
                     width: 250,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.all(Radius.circular(27)),
 
                     ),
-                    child:Row(
+                    child:const Row(
                       children: [
                         SizedBox(width:50),
                         Text("Get Started",style:TextStyle(

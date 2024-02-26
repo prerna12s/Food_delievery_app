@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1022472538599",
+    "project_id": "fooddelievery-d2502",
+    "storage_bucket": "fooddelievery-d2502.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022472538599:android:1cd69566d3b6dd39665542",
+        "android_client_info": {
+          "package_name": "com.example.food_delieveryapp_prerna"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD4sXJ1F9YNTp0WkjSZiALbeSFTd_mzzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

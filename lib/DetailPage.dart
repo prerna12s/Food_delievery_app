@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:food_delieveryapp_prerna/Profile.dart';
-import 'package:food_delieveryapp_prerna/DetailPage.dart';
+import 'package:badges/badges.dart' as badges;
+import 'package:food_delieveryapp_prerna/CartProvider.dart';
+import 'package:provider/provider.dart';
+import 'package:food_delieveryapp_prerna/home.dart';
 
 class Detail extends StatefulWidget {
-  const Detail({super.key});
+  String food;
+
+   Detail({super.key,required this.food});
 
   @override
   State<Detail> createState() => _DetailState();
@@ -30,15 +34,23 @@ class _DetailState extends State<Detail> {
   @override
 
   Widget build(BuildContext context) {
-
+   // final cartprovider=Provider.of<CartProvider>(context);
     return Scaffold(
       appBar:AppBar(
         backgroundColor: Colors.deepOrangeAccent,
-           title:Padding(
-             padding: const EdgeInsets.only(left:250,right:8),
-             child: IconButton(onPressed: (){},
-              icon: Icon(Icons.shopping_cart,color:Colors.black,size:35)),
-           ),
+           title:
+            Center(
+              child: badges.Badge(
+                 badgeAnimation: badges.BadgeAnimation.fade(toAnimate: true,animationDuration: Duration(milliseconds: 300)),
+                 badgeContent: Text("0",style:TextStyle(color:Colors.white,fontWeight: FontWeight.bold),),
+                 child: Padding(
+                   padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/1.5),
+                   child: IconButton(onPressed: (){},
+                    icon: const Icon(Icons.shopping_cart,color:Colors.white,size:35)),
+                 ),
+               ),
+            ),
+
         ),
       body:SingleChildScrollView(
         child: Column(
@@ -65,10 +77,10 @@ class _DetailState extends State<Detail> {
               icon:Icon(Icons.favorite,color:iconcolor,size: 37,)),
 ],
               ),
-               SizedBox(
+               const SizedBox(
                  height:10,
                ),
-               Text("Cheese Burger",style: TextStyle(
+               const Text("Cheese Burger",style: TextStyle(
                  color: Colors.black,
                  fontSize: 33,
                  fontWeight: FontWeight.bold,
@@ -76,12 +88,12 @@ class _DetailState extends State<Detail> {
                ),),
 
 
-               Icon(Icons.star,color: Color(0xFFFF2F08),size: 20,),
-            Text("999 Ratings",style:TextStyle(
+               const Icon(Icons.star,color: Color(0xFFFF2F08),size: 20,),
+            const Text("999 Ratings",style:TextStyle(
               color:Color(0xFFFF2F08),
             )),
 
-               SizedBox(
+               const SizedBox(
                  height: 10,
                ),
 
@@ -91,7 +103,7 @@ class _DetailState extends State<Detail> {
                 decoration: BoxDecoration(
                    borderRadius: BorderRadius.circular(23),
 
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                     color:Colors.black87,
                     blurRadius:4,
@@ -100,28 +112,28 @@ class _DetailState extends State<Detail> {
                ),
 
 
-                 child: Image.asset("lib/images/Cheese Burger.jpg",fit:BoxFit.fitHeight),
+                 child: Image.asset("lib/images/widget.food",fit:BoxFit.fitHeight),
                 ),
 
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top:20),
-                      child: Text("Cheese Burger",style:TextStyle(
+                      padding: EdgeInsets.only(top:20),
+                      child: Text("widget.food",style:TextStyle(
                         fontSize: 23
                         ,
                       )),
                     ),
 
 ],),
-           SizedBox(
+           const SizedBox(
              height:10,
            ),
            Row(
              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              children: [
-               Column(
+               const Column(
                  children:[
                  Text("Calories", style: TextStyle(
                      color:Colors.black54,
@@ -139,7 +151,7 @@ class _DetailState extends State<Detail> {
                    width: 2,
                    color: Colors.black45,
                ),
-               Column(
+               const Column(
                  children:[
                    Text("Calories",style: TextStyle(
                      color:Colors.black54,
@@ -154,7 +166,7 @@ class _DetailState extends State<Detail> {
 
              ],
            ),
-            SizedBox(
+            const SizedBox(
               height:8,
             ),
             Padding(
@@ -172,17 +184,17 @@ class _DetailState extends State<Detail> {
                                 count++;
                               });
                             },
-                             icon: Icon(Icons.add,size:26),color:Colors.white,)),
-                      SizedBox(width:3),
-                      Text('Qty',style: TextStyle(
+                             icon: const Icon(Icons.add,size:26),color:Colors.white,)),
+                      const SizedBox(width:3),
+                      const Text('Qty',style: TextStyle(
                         fontSize: 20,
                       ),),
-                      Text("$count",style: TextStyle(
+                      Text("$count",style: const TextStyle(
                       fontSize: 20,
 
 
                       ),),
-                      SizedBox(width:3),
+                      const SizedBox(width:3),
                       CircleAvatar(
                           backgroundColor:Colors.green,
                           child: IconButton(onPressed: (){
@@ -193,7 +205,7 @@ class _DetailState extends State<Detail> {
                             });
 
                           },
-                             icon: Icon(Icons.horizontal_rule_outlined,size:24) ,color:Colors.white,)),
+                             icon: const Icon(Icons.horizontal_rule_outlined,size:24) ,color:Colors.white,)),
                     ],
                   ),
 
@@ -203,7 +215,7 @@ class _DetailState extends State<Detail> {
                     color: Colors.black45,
                   ),
 
-                  Column(
+                  const Column(
                     children:[
                       Text("Price",style: TextStyle(
                           color:Colors.black54,
@@ -219,7 +231,7 @@ class _DetailState extends State<Detail> {
                 ],
               ),
             ),
-           SizedBox(
+           const SizedBox(
              height:24,
            ),
             InkWell(
@@ -233,7 +245,7 @@ class _DetailState extends State<Detail> {
                   borderRadius: BorderRadius.circular(25),
                   color: Colors.red,
                 ),
-                child: Center(
+                child: const Center(
                   child: Text("Add to Cart",style: TextStyle(
                     fontSize: 21,
                     color:Colors.white,

@@ -1,7 +1,8 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delieveryapp_prerna/Profile.dart';
-import 'package:food_delieveryapp_prerna/DetailPage.dart';
-import 'package:food_delieveryapp_prerna/splash.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -11,6 +12,8 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,24 +27,29 @@ class _ProfileState extends State<Profile> {
             child: Column(
               children: [
 
-                    Text(" Profile",style:TextStyle(
+                    const Text(" Profile",style:TextStyle(
                       color:Colors.black,
                       fontSize:27,
             )),
-              Container(
-              height:200,
-               width:500,
-               child: Lottie.asset('lib/images/Profile.json'),
+              CupertinoButton(
+                onPressed: (){},
+                child: CircleAvatar(
+                  radius: 60,
+                  child:Icon(Icons.person,size:50),
+                ),
+              ),
+              SizedBox(
+                height: 50,
               ),
 
 
               Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                 elevation: 2,
                 child: ListTile(
                   onTap: (){},
-                  leading: Icon(Icons.shopping_bag),
-                  title: Text("My Orders",style: TextStyle(
+                  leading: const Icon(Icons.shopping_bag),
+                  title: const Text("My Orders",style: TextStyle(
                     fontSize:18,
                     color: Colors.black,
 
@@ -52,13 +60,13 @@ class _ProfileState extends State<Profile> {
 
                 ),
                Card(
-                shape:RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                shape:const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                 elevation: 2,
                 child: ListTile(
               onTap: (){
               },
-               leading:Icon(Icons.shopping_cart_sharp) ,
-              title: Text("My Cart",style: TextStyle(
+               leading:const Icon(Icons.shopping_cart_sharp) ,
+              title: const Text("My Cart",style: TextStyle(
                 fontSize:18,
                 color: Colors.black,),
               ),
@@ -68,13 +76,13 @@ class _ProfileState extends State<Profile> {
 
             Card(
              elevation: 2,
-            shape: BeveledRectangleBorder(borderRadius: BorderRadius.zero),
+            shape: const BeveledRectangleBorder(borderRadius: BorderRadius.zero),
              child: ListTile(
              onTap: (){
             Navigator.pushNamed(context, '/');
              },
-             leading: Icon(Icons.exit_to_app),
-             title: Text("Logout"),
+             leading: const Icon(Icons.exit_to_app),
+             title: const Text("Logout"),
             ),
             ),
 
